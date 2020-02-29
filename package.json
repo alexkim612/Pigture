@@ -1,0 +1,27 @@
+{
+  "name": "pigture",
+  "version": "1.0.0",
+  "description": "weight your pig",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alexkim612/Pigture.git"
+  },
+  "keywords": [
+    "pig",
+    "weigh",
+    "picture"
+  ],
+  "author": "Alex Kim",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alexkim612/Pigture/issues"
+  },
+  "homepage": "https://github.com/alexkim612/Pigture#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
