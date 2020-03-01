@@ -21,8 +21,28 @@ class App extends React.Component {
     this.nextPage = this.nextPage.bind(this);
   }
 
-  // Next page 
-  nextPage() {
+ 
+
+  // Set Heart Girth
+  setHeartGirth() {
+
+  }
+
+  // Set Length
+  setLength() {
+
+  }
+
+  // Set Weight
+  setWeight() {
+    const weight = Math.pow(this.state.pigHeartGirth, 2) * this.state.pigLength / 400;
+    this.setState= ({
+      weight: weight,
+    });
+  }
+
+   // Next page 
+   nextPage() {
     let nextPage;
     if(nextPage > 3) {
       nextPage = 0;
@@ -34,9 +54,9 @@ class App extends React.Component {
     });
   }
 
-  // 
 
   render() {
+
     let page = () => {
       if(this.state.page === 0) {
         return <LandingPage/>;

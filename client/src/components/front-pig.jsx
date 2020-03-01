@@ -1,7 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-function FrontPig(props) {
+class FrontPig extends React.Component {
+  constructor(props) {
+    super(props);
+  }
   return(
     <div>
       FRONT PIG
