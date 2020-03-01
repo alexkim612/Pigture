@@ -18,20 +18,40 @@ class App extends React.Component {
       page: 0,
     }
 
+    this.nextPage = this.nextPage.bind(this);
   }
 
   // Next page 
+  nextPage() {
+    let nextPage;
+    if(nextPage > 3) {
+      nextPage = 0;
+    } else {
+      nextPage = this.state.page += 1;
+    }
+    this.setState({
+      page: nextPage,
+    });
+  }
 
   // 
 
   render() {
+    let page = () => {
+      if(this.state.page === 0) {
+        return <LandingPage/>;
+      } else if (this.state.page === 1) {
+        return <FrontPig/>;
+      } else if (this.state.page === 2) {
+        return <SidePig/>;
+      } else {
+        return <Results/>;
+      }
+    }
+
     return (
       <div className="app-container">
-        PIGTURE
-        <LandingPage/>
-        <FrontPig/>
-        <SidePig/>
-        <Results/>
+        {page()}
       </div>
     )
   }
