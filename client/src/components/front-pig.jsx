@@ -10,9 +10,12 @@ class FrontPig extends React.Component {
       setPoints: null,
       firstPoint: {x: 0, y: 0},
       secondPoint: {x: 0, y: 0},
+      measurement: 0,
     }
     this.fileUploaded = this.fileUploaded.bind(this);
     this.setPoint = this.setPoint.bind(this);
+    this.handleMeasurementChange = this.handleMeasurementChange.bind(this);
+    this.getInches = this.getInches.bind(this);
   }
 
   fileUploaded(event) {
@@ -23,7 +26,6 @@ class FrontPig extends React.Component {
   }
 
   setPoint(e) {
-    console.log(e);
     if (this.state.setPoints === 'first') {
       this.setState({ 
         firstPoint: {
@@ -43,6 +45,18 @@ class FrontPig extends React.Component {
     }
   }
 
+  handleMeasurementChange() {
+    this.setState({
+      measurement: event.target.value
+    })
+  }
+
+  getInches() {
+    const x = Math.abs(this.state.firstPoint.x - this.state.secondPoint.x);
+    const y = Math.abs(this.state.firstPoint.y - this.state.secondPoint.y);
+    return (Math.sqrt(Math.pow(x, 2) + Math.pow(y, 2)) / this.state.measurement);
+  }
+
   render() {
     return (
       <div className='front-pig-container'>
@@ -54,10 +68,10 @@ class FrontPig extends React.Component {
         </div>
         <div>
           <label htmlFor='base-measurement'>Base Reference Measurement (inches)</label>
-          <input type='text' className='base-measurement'/>
+          <input type='number' onChange={this.handleMeasurementChange} className='base-measurement'/>
+        </div>
           <button onClick={() => this.setState({setPoints:'first'})}>Set First Point</button>
           <button onClick={() =>this.setState({setPoints:'second'})}>Set Second Point</button>
-        </div>
         <div>
           <button>Draw Pig Length</button>
         </div>
