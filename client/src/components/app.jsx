@@ -15,22 +15,27 @@ class App extends React.Component {
       pigHeartGirth: 0,
       pigLength: 0,
       weight: 0,
-      page: 1,
+      page: 2,
     }
 
     this.nextPage = this.nextPage.bind(this);
+    this.setLength = this.setLength.bind(this);
   }
 
  
 
   // Set Heart Girth
   setHeartGirth(value) {
-
+    this.setState({
+      pigHeartGirth: value,
+    });
   }
 
   // Set Length
   setLength(value) {
-
+    this.setState({
+      pigLength: value,
+    });
   }
 
   // Set Weight
@@ -59,13 +64,13 @@ class App extends React.Component {
 
     let page = () => {
       if(this.state.page === 0) {
-        return <LandingPage/>;
+        return <LandingPage nextPage={this.nextPage}/>;
       } else if (this.state.page === 1) {
-        return <FrontPig/>;
+        return <FrontPig nextPage={this.nextPage} setHeartGirth={this.setHeartGirth}/>;
       } else if (this.state.page === 2) {
-        return <SidePig/>;
+        return <SidePig nextPage={this.nextPage} setLength={this.setLength}/>;
       } else {
-        return <Results/>;
+        return <Results nextPage={this.nextPage}/>;
       }
     }
 
