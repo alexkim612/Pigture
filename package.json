@@ -24,11 +24,12 @@
   },
   "homepage": "https://github.com/alexkim612/Pigture#readme",
   "dependencies": {
-    "express": "^4.17.1",
     "axios": "^0.19.2",
     "body-parser": "^1.19.0",
+    "express": "^4.17.1",
     "react": "^16.12.0",
-    "react-dom": "^16.12.0"
+    "react-dom": "^16.12.0",
+    "react-konva": "^16.12.0-0"
   },
   "devDependencies": {
     "@babel/core": "^7.8.4",
