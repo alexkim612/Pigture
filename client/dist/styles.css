@@ -2,3 +2,21 @@
   font-family: "Helvetica", sans-serif;
   font-size: 12pt;
 }
+
+.front-pig-container {
+}
+
+.pig-picture {
+  display: flex;
+  flex-direction: column;
+}
+
+.picture-wrapper {
+  width: 750px;
+}
+
+#front-pig-picture-container {
+  width: 100%;
+}
+
+
