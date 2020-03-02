@@ -15,7 +15,7 @@ class App extends React.Component {
       pigHeartGirth: 0,
       pigLength: 0,
       weight: 0,
-      page: 0,
+      page: 1,
     }
 
     this.nextPage = this.nextPage.bind(this);
@@ -24,12 +24,12 @@ class App extends React.Component {
  
 
   // Set Heart Girth
-  setHeartGirth() {
+  setHeartGirth(value) {
 
   }
 
   // Set Length
-  setLength() {
+  setLength(value) {
 
   }
 
