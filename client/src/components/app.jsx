@@ -20,6 +20,7 @@ class App extends React.Component {
 
     this.nextPage = this.nextPage.bind(this);
     this.setLength = this.setLength.bind(this);
+    this.setWeight = this.setWeight.bind(this);
     this.setHeartGirth = this.setHeartGirth.bind(this);
   }
 
@@ -41,8 +42,8 @@ class App extends React.Component {
 
   // Set Weight
   setWeight() {
-    const weight = Math.pow(this.state.pigHeartGirth, 2) * this.state.pigLength / 400;
-    this.setState= ({
+    let weight = ((Math.pow(this.state.pigHeartGirth, 2) * this.state.pigLength) / 400);
+    this.setState({
       weight: weight,
     });
   }
@@ -69,9 +70,10 @@ class App extends React.Component {
       } else if (this.state.page === 1) {
         return <FrontPig nextPage={this.nextPage} setHeartGirth={this.setHeartGirth}/>;
       } else if (this.state.page === 2) {
-        return <SidePig nextPage={this.nextPage} setLength={this.setLength}/>;
+        return <SidePig nextPage={this.nextPage} setLength={this.setLength} setWeight={this.setWeight}/>;
       } else {
-        return <Results nextPage={this.nextPage}/>;
+
+        return <Results nextPage={this.nextPage} weight={this.state.weight}/>;
       }
     }
 

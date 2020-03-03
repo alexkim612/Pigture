@@ -101,9 +101,9 @@ class SidePig extends React.Component {
     const pigLengthOne = this.getPixelLength(this.state.pigFirstPoint, this.state.pigSecondPoint);
     const pigLengthTwo = this.getPixelLength(this.state.pigThirdPoint, this.state.pigSecondPoint);
     const pigLength = (pigLengthOne + pigLengthTwo) / ref;
-    // console.log('ref:', ref, 'pig1:', pigLengthOne, 'pig2:', pigLengthTwo);
-    // console.log('pigLength', pigLength);
+
     this.props.setLength(pigLength);
+    setTimeout(() => this.props.setWeight(), 200);
     this.props.nextPage();
   }
 
