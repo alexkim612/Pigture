@@ -1,9 +1,16 @@
 * {
-  font-family: "Helvetica", sans-serif;
+  font-family: 'Noto Sans', sans-serif, "Helvetica", sans-serif;
   font-size: 12pt;
 }
 
-.front-pig-container {
+body {
+  background: #ffbac6;
+  
+}
+
+/* PICTURES */
+
+.pig-container {
 }
 
 .pig-picture {
@@ -15,8 +22,44 @@
   width: 750px;
 }
 
-#front-pig-picture-container {
+#pig-picture-container {
   width: 100%;
 }
+
+/* BUTTONS */
+
+
+/* RESULTS */
+
+.results-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr) repeat(3, 2fr) repeat(2, 1fr);
+  grid-template-rows: 1fr 0.3fr repeat(8, 1fr);
+  grid-column-gap: 5px;
+  grid-row-gap: 5px;
+}
+
+.results {
+  grid-area: 1 / 3 / 2 / 6;
+  font-size: 60px;
+}
+
+.statistics {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.weight-container {
+  grid-area: 3 / 3 / 10 / 6;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+
+}
+
+
+
 
 

@@ -101,18 +101,19 @@ class SidePig extends React.Component {
     const pigLengthOne = this.getPixelLength(this.state.pigFirstPoint, this.state.pigSecondPoint);
     const pigLengthTwo = this.getPixelLength(this.state.pigThirdPoint, this.state.pigSecondPoint);
     const pigLength = (pigLengthOne + pigLengthTwo) / ref;
-    console.log('ref:', ref, 'pig1:', pigLengthOne, 'pig2:', pigLengthTwo);
-    console.log('pigLength', pigLength);
+
     this.props.setLength(pigLength);
+    setTimeout(() => this.props.setWeight(), 200);
+    this.props.nextPage();
   }
 
   render() {
     return (
-      <div className='front-pig-container'>
+      <div className='pig-container'>
         <div className='pig-picture'>
           <input type='file' onChange={this.fileUploaded}/>
           <div className='picture-wrapper'>
-            <img ref="image" id='front-pig-picture-container' src={this.state.selectedFile} onClick={this.setPoint}/>
+            <img ref="image" id='pig-picture-container' src={this.state.selectedFile} onClick={this.setPoint}/>
           </div>
         </div>
         <button name='reference' onClick={this.handleRefOrPig}>Reference Measurement</button>
