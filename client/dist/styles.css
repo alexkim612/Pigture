@@ -3,9 +3,23 @@
   font-size: 12pt;
 }
 
+
 body {
   background: #ffbac6;
-  
+}
+
+h4 {
+  font: inherit;
+  font-size: 40px;
+  color: #3c3c3c;
+}
+
+label {
+  font-size: 20px;
+}
+
+.input-container {
+  display: block;
 }
 
 h1 {
@@ -52,19 +66,93 @@ h1 {
 
 /* BUTTONS */
 
+button {
+  overflow: visible;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  font: inherit;
+  line-height: normal;
+  cursor: pointer;
+  -moz-user-select: text;
+  text-decoration: none;
+  text-transform: uppercase;
+  padding: 16px 36px 22px;
+  background-color: #fff;
+  color: #666;
+  border: 2px solid #666;
+  border-radius: 6px;
+  margin-bottom: 16px;
+  -webkit-transition: all .5s ease;
+  transition: all .5s ease;
+}
+
+@-webkit-keyframes stripe-slide {
+  0% {
+    background-position: 0% 0;
+  }
+  100% {
+    background-position: 100% 0;
+  }
+}
+@keyframes stripe-slide {
+  0% {
+    background-position: 0% 0;
+  }
+  100% {
+    background-position: 100% 0;
+  }
+}
+
+.btn:-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+.btn--stripe {
+  overflow: hidden;
+  position: relative;
+}
+.btn--stripe:after {
+  content: '';
+  height: 7px;
+  width: 100%;
+  background-image: repeating-linear-gradient(45deg, #666, #666 1px, transparent 2px, transparent 5px);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  border-top: 1px solid #666;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  background-size: 7px 7px;
+}
+.btn--stripe:hover {
+  background-color: #666;
+  color: #fff;
+  border-color: #000;
+}
+.btn--stripe:hover:after {
+  background-image: repeating-linear-gradient(45deg, #fff, #fff 1px, transparent 2px, transparent 5px);
+  border-top: 1px solid #000;
+  -webkit-animation: stripe-slide 12s infinite linear forwards;
+          animation: stripe-slide 12s infinite linear forwards;
+}
+.btn--radius {
+  border-radius: 36px;
+}
 
 /* RESULTS */
 
 .results-container {
   display: grid;
-  grid-template-columns: repeat(2, 1fr) repeat(3, 2fr) repeat(2, 1fr);
-  grid-template-rows: 1fr 0.3fr repeat(8, 1fr);
-  grid-column-gap: 5px;
-  grid-row-gap: 5px;
+  grid-template-columns: 0.5fr repeat(3, 1fr) 0.5fr;
+  grid-template-rows: 150px repeat(3, 300px);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
 }
 
 .results {
-  grid-area: 1 / 3 / 2 / 6;
+  grid-area: 1 / 2 / 2 / 5;
   font-size: 60px;
 }
 
@@ -74,12 +162,29 @@ h1 {
 }
 
 .weight-container {
-  grid-area: 3 / 3 / 10 / 6;
+  grid-area: 2 / 2 / 4 / 5;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
 }
 
+.pig-gif-container {
+  grid-area: 3 / 1 / 5 / 5;
+  animation: move-pig 15s infinite;
+}
+
+@keyframes move-pig {
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(120%);
+  }
+}
+
+.pig-gif {
+  animation-name: move-pig;
+}
 
 
 

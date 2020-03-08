@@ -124,26 +124,28 @@ class FrontPig extends React.Component {
             <img ref="image" id='pig-picture-container' src={this.state.selectedFile} onClick={this.setPoint} />
           </div>
         </div>
-        <button name='reference' onClick={this.handleRefOrPig}>Reference Measurement</button>
-        <button name='pig' onClick={this.handleRefOrPig}>Pig Heart Girth</button>
+        <button className='btn btn--stripe' name='reference' onClick={this.handleRefOrPig}>Reference Measurement</button>
+        <button className='btn btn--stripe' name='pig' onClick={this.handleRefOrPig}>Pig Heart Girth</button>
 
-        {this.state.refOrPig === 'reference' ?
-          <div>
-            <h4>Reference Measurement</h4>
+        {this.state.refOrPig === 'reference' ? 
+        <div>
+          <h4>Reference Measurement</h4>
+          <div className='input-container'>
             <label htmlFor='base-measurement'>Base Reference (inches)</label>
-            <input type='number' onChange={this.handleMeasurementChange} className='base-measurement' />
-            <button onClick={() => this.setState({ refSetPoints: 'first' })}>Set First Point</button>
-            <button onClick={() => this.setState({ refSetPoints: 'second' })}>Set Second Point</button>
+            <input type='number' onChange={this.handleMeasurementChange} className='base-measurement'/>
           </div>
-          :
-          <div>
-            <h4>Pig Heart Girth</h4>
-            <button onClick={() => this.setState({ pigSetPoints: 'center' })}>Set Center Point</button>
-            <button onClick={() => this.setState({ pigSetPoints: 'outer' })}>Set Outer Point</button>
-          </div>
-        }
+          <button className='btn btn--stripe' onClick={() => this.setState({refSetPoints:'first'})}>Set First Point</button>
+          <button className='btn btn--stripe' onClick={() => this.setState({refSetPoints:'second'})}>Set Second Point</button>
+        </div>
+        :
+        <div>
+          <h4>Pig Heart Girth</h4>
+          <button className='btn btn--stripe' onClick={() => this.setState({pigSetPoints:'center'})}>Set Center Point</button>
+          <button className='btn btn--stripe' onClick={() => this.setState({pigSetPoints:'outer'})}>Set Outer Point</button>
+        </div>
+      }
 
-        <button onClick={this.handleSubmit}>Submit</button>
+      <button className='btn--stripe' onClick={this.handleSubmit}>Submit</button>
       </div>
     );
   }
