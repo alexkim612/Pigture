@@ -40,6 +40,19 @@ label {
   width: 100%;
 }
 
+.dropzone {
+  height: 500px;
+  width: 750px;
+  background-color: #dedcdca1;
+  border: 2px dashed rgb(201, 200, 200);
+  border-radius: 5%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  font-size: 16px;
+}
+
 /* BUTTONS */
 
 button {
