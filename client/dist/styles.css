@@ -3,9 +3,16 @@
   font-size: 12pt;
 }
 
-
 body {
   background: #ffbac6;
+}
+
+h1 {
+  font-family: 'Khula', sans-serif;
+  font-size: 50px;
+  text-transform: lowercase;
+  color: #ff7971;
+  -webkit-text-stroke: 1px;
 }
 
 h4 {
@@ -25,6 +32,9 @@ label {
 /* PICTURES */
 
 .pig-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .pig-picture {
