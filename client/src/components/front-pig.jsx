@@ -105,6 +105,7 @@ class FrontPig extends React.Component {
   render() {
     return (
       <div className='pig-container'>
+        <h1>Pig Heart Girth</h1>
         <div className='pig-picture'>
           {/* <input type='file' onChange={this.fileUploaded} /> */}
           <div className='picture-wrapper' className='dropzone'>

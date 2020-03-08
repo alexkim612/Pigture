@@ -8,9 +8,20 @@ body {
   
 }
 
+h1 {
+  font-family: 'Khula', sans-serif;
+  font-size: 50px;
+  text-transform: lowercase;
+  color: #ff7971;
+  -webkit-text-stroke: 1px;
+}
+
 /* PICTURES */
 
 .pig-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .pig-picture {
@@ -27,11 +38,11 @@ body {
 }
 
 .dropzone {
-  height: 750px;
+  height: 500px;
   width: 750px;
-  background-color: #fff;
-  border: 2px dashed rgb(187, 186, 186);
-  border-radius: 50%;
+  background-color: #dedcdca1;
+  border: 2px dashed rgb(201, 200, 200);
+  border-radius: 5%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -67,9 +78,6 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-}
-
-
 }
 
 
