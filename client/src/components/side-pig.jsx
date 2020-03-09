@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import Dropzone from 'react-dropzone';
 
 class SidePig extends React.Component {
   constructor(props) {

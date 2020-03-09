@@ -25,10 +25,6 @@ label {
   font-size: 20px;
 }
 
-.input-container {
-  display: block;
-}
-
 /* PICTURES */
 
 .pig-container {
@@ -49,6 +45,15 @@ label {
 #pig-picture-container {
   width: 100%;
 }
+
+/* Measurments */
+
+.input-container {
+  display: block;
+}
+
+
+/* DROPZONE */
 
 .dropzone {
   height: 500px;
