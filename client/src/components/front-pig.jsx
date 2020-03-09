@@ -1,4 +1,3 @@
-
 import React from 'react';
 import ReactDOM from 'react-dom';
 import PigDropZone from './pig-drop-zone.jsx';
