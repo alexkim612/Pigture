@@ -1,10 +1,11 @@
 * {
-  font-family: 'Noto Sans', sans-serif, "Helvetica", sans-serif;
+  font-family: 'Noto Sans', sans-serif, 'Khula', sans-serif, "Helvetica", sans-serif;
   font-size: 12pt;
 }
 
 body {
   background: #ffbac6;
+  margin: 0px 0px 10px 0px;
 }
 
 h1 {
@@ -23,6 +24,32 @@ h4 {
 
 label {
   font-size: 20px;
+}
+
+/* NAVBAR */
+
+.nav-bar {
+  display: flex;
+  justify-content: space-evenly;
+  list-style-type: none;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  background: rgba(255, 73, 255, 0.303);
+  top: 0;
+}
+
+li {
+  color: #666;
+  display: inline-block;
+  padding: 17px 25px;
+  text-align: center;
+  width: 25%;
+}
+
+li:hover,
+li:active {
+  background: rgba(179, 179, 179, 0.605);
 }
 
 /* PICTURES */
