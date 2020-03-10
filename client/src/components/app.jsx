@@ -68,16 +68,16 @@ class App extends React.Component {
         <div>
           <ul className="nav-bar">
             <li className="nav">
-              <Link to="/">Home</Link>
+              <Link to="/">home</Link>
             </li>
             <li className="front-pig-nav">
-              <Link to="/front-pig">Pig Heart Girth</Link>
+              <Link to="/front-pig">pig heart girth</Link>
             </li>
             <li className="side-pig-nav">
-              <Link to="/side-pig">Pig Length</Link>
+              <Link to="/side-pig">pig length</Link>
             </li>
             <li className="results-nav">
-              <Link to="results">Results</Link>
+              <Link to="results">results</Link>
             </li>
           </ul>
 

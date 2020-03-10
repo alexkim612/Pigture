@@ -45,6 +45,7 @@ li {
   padding: 17px 25px;
   text-align: center;
   width: 25%;
+  animation: fadeOut 0.5s 1;
 }
 
 a:visited {
@@ -55,13 +56,33 @@ a {
   text-decoration: none;
 }
 
-a:hover{
+/* a:hover{
   font-size: 110%;
-}
+} */
 
 li:hover,
 li:active {
   background: rgba(179, 179, 179, 0.605);
+  /* text-transform: uppercase; */
+  animation: fadeIn 0.5s 1;
+}
+
+@keyframes fadeIn {
+  from {
+    background: #f1f3ffff;
+  }
+  to {
+    background: rgba(179, 179, 179, 0.605);
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    background: rgba(179, 179, 179, 0.605);
+  }
+  to {
+    background: #f1f3ffff;
+  }
 }
 
 /* PICTURES */
@@ -139,6 +160,7 @@ button {
     background-position: 100% 0;
   }
 }
+
 @keyframes stripe-slide {
   0% {
     background-position: 0% 0;
@@ -182,6 +204,14 @@ button {
 }
 .btn--radius {
   border-radius: 36px;
+}
+
+.btn-container {
+  width: 750px;
+  padding: 20px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
 }
 
 /* RESULTS */

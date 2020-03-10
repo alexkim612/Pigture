@@ -129,8 +129,10 @@ class SidePig extends React.Component {
             }
           </div>
         </div>
-        <button className='btn btn--stripe' name='reference' onClick={this.handleRefOrPig}>Reference Measurement</button>
-        <button className='btn btn--stripe' name='pig' onClick={this.handleRefOrPig}>Pig Length</button>
+        <div className='btn-container'>
+          <button className='btn btn--stripe' name='reference' onClick={this.handleRefOrPig}>Reference Measurement</button>
+          <button className='btn btn--stripe' name='pig' onClick={this.handleRefOrPig}>Pig Length</button>
+        </div>
 
         {this.state.refOrPig === 'reference' ?
           <div>
