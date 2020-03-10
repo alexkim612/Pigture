@@ -1,10 +1,11 @@
 * {
-  font-family: 'Noto Sans', sans-serif, "Helvetica", sans-serif;
+  font-family: 'Noto Sans', sans-serif, 'Khula', sans-serif, "Helvetica", sans-serif;
   font-size: 12pt;
 }
 
 body {
   background: #ffbac6;
+  margin: 0px 0px 10px 0px;
 }
 
 h1 {
@@ -23,6 +24,65 @@ h4 {
 
 label {
   font-size: 20px;
+}
+
+/* NAVBAR */
+
+.nav-bar {
+  display: flex;
+  justify-content: space-evenly;
+  list-style-type: none;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  background: #f1f3ffff;
+  top: 0;
+}
+
+li {
+  color: #666;
+  display: inline-block;
+  padding: 17px 25px;
+  text-align: center;
+  width: 25%;
+  animation: fadeOut 0.5s 1;
+}
+
+a:visited {
+  color: black;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* a:hover{
+  font-size: 110%;
+} */
+
+li:hover,
+li:active {
+  background: rgba(179, 179, 179, 0.605);
+  /* text-transform: uppercase; */
+  animation: fadeIn 0.5s 1;
+}
+
+@keyframes fadeIn {
+  from {
+    background: #f1f3ffff;
+  }
+  to {
+    background: rgba(179, 179, 179, 0.605);
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    background: rgba(179, 179, 179, 0.605);
+  }
+  to {
+    background: #f1f3ffff;
+  }
 }
 
 /* PICTURES */
@@ -100,6 +160,7 @@ button {
     background-position: 100% 0;
   }
 }
+
 @keyframes stripe-slide {
   0% {
     background-position: 0% 0;
@@ -143,6 +204,14 @@ button {
 }
 .btn--radius {
   border-radius: 36px;
+}
+
+.btn-container {
+  width: 750px;
+  padding: 20px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
 }
 
 /* RESULTS */

@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 import LandingPage from './landing-page.jsx';
 import FrontPig from './front-pig.jsx';
@@ -15,7 +16,6 @@ class App extends React.Component {
       pigHeartGirth: 0,
       pigLength: 0,
       weight: 0,
-      page: 1,
     }
 
     this.nextPage = this.nextPage.bind(this);
@@ -24,7 +24,7 @@ class App extends React.Component {
     this.setHeartGirth = this.setHeartGirth.bind(this);
   }
 
- 
+
 
   // Set Heart Girth
   setHeartGirth(value) {
@@ -48,10 +48,10 @@ class App extends React.Component {
     });
   }
 
-   // Next page 
-   nextPage() {
+  // Next page 
+  nextPage() {
     let nextPage;
-    if(nextPage > 3) {
+    if (nextPage > 3) {
       nextPage = 0;
     } else {
       nextPage = this.state.page += 1;
@@ -63,24 +63,40 @@ class App extends React.Component {
 
 
   render() {
-
-    let page = () => {
-      if(this.state.page === 0) {
-        return <LandingPage nextPage={this.nextPage}/>;
-      } else if (this.state.page === 1) {
-        return <FrontPig nextPage={this.nextPage} setHeartGirth={this.setHeartGirth}/>;
-      } else if (this.state.page === 2) {
-        return <SidePig nextPage={this.nextPage} setLength={this.setLength} setWeight={this.setWeight}/>;
-      } else {
-
-        return <Results nextPage={this.nextPage} weight={this.state.weight}/>;
-      }
-    }
-
     return (
-      <div className="app-container">
-        {page()}
-      </div>
+      <Router>
+        <div>
+          <ul className="nav-bar">
+            <li className="nav">
+              <Link to="/">home</Link>
+            </li>
+            <li className="front-pig-nav">
+              <Link to="/front-pig">pig heart girth</Link>
+            </li>
+            <li className="side-pig-nav">
+              <Link to="/side-pig">pig length</Link>
+            </li>
+            <li className="results-nav">
+              <Link to="results">results</Link>
+            </li>
+          </ul>
+
+          <Switch>
+            <Route path="/front-pig">
+              <FrontPig setHeartGirth={this.setHeartGirth}/>
+            </Route>
+            <Route path="/side-pig">
+              <SidePig setLength={this.setLength} setWeight={this.setWeight}/>
+            </Route>
+            <Route path="/results">
+              <Results weight={this.state.weight}/>
+            </Route>
+            <Route path="/">
+              <LandingPage />
+            </Route>
+          </Switch>
+        </div>
+      </Router>
     )
   }
 

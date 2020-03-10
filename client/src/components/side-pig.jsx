@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import PigDropZone from './pig-drop-zone.jsx';
 
 class SidePig extends React.Component {
@@ -19,6 +20,7 @@ class SidePig extends React.Component {
       pigThirdPoint: { x: 0, y: 0 },
     }
     this.fileUploaded = this.fileUploaded.bind(this);
+    this.dropFileUploaded = this.dropFileUploaded.bind(this);
     this.setPoint = this.setPoint.bind(this);
     this.handleRefOrPig = this.handleRefOrPig.bind(this);
     this.handleMeasurementChange = this.handleMeasurementChange.bind(this);
@@ -26,11 +28,11 @@ class SidePig extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
+  // Upload File
   fileUploaded(file) {
     this.setState({
       selectedFile: URL.createObjectURL(file.target.files[0]),
     });
-    // console.log(event.target.files[0])
   }
 
   // Drop Upload File
@@ -128,8 +130,10 @@ class SidePig extends React.Component {
             }
           </div>
         </div>
-        <button className='btn btn--stripe' name='reference' onClick={this.handleRefOrPig}>Reference Measurement</button>
-        <button className='btn btn--stripe' name='pig' onClick={this.handleRefOrPig}>Pig Length</button>
+        <div className='btn-container'>
+          <button className='btn btn--stripe' name='reference' onClick={this.handleRefOrPig}>Reference Measurement</button>
+          <button className='btn btn--stripe' name='pig' onClick={this.handleRefOrPig}>Pig Length</button>
+        </div>
 
         {this.state.refOrPig === 'reference' ?
           <div>

@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import PigDropZone from './pig-drop-zone.jsx';
 
 class FrontPig extends React.Component {
@@ -114,16 +115,18 @@ class FrontPig extends React.Component {
       <div className='pig-container'>
         <h1>Pig Heart Girth</h1>
         <div className='pig-picture'>
+          <input type='file' onChange={this.fileUploaded} />
           <div className='picture-wrapper'>
             {this.state.selectedFile === '' ?
               <PigDropZone dropFileUploaded={this.dropFileUploaded} /> :
               <img ref="image" id='pig-picture-container' src={this.state.selectedFile} onClick={this.setPoint} />
             }
-            <input type='file' onChange={this.fileUploaded}/>
           </div>
         </div>
-        <button className='btn btn--stripe' name='reference' onClick={this.handleRefOrPig}>Reference Measurement</button>
-        <button className='btn btn--stripe' name='pig' onClick={this.handleRefOrPig}>Pig Heart Girth</button>
+        <div className='btn-container'>
+          <button className='btn btn--stripe' name='reference' onClick={this.handleRefOrPig}>Reference Measurement</button>
+          <button className='btn btn--stripe' name='pig' onClick={this.handleRefOrPig}>Pig Heart Girth</button>
+        </div>
 
         {this.state.refOrPig === 'reference' ?
           <div>
