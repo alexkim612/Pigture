@@ -67,7 +67,7 @@ class App extends React.Component {
       <Router>
         <div>
           <ul className="nav-bar">
-            <li className="home-nav">
+            <li className="nav">
               <Link to="/">Home</Link>
             </li>
             <li className="front-pig-nav">
@@ -83,13 +83,13 @@ class App extends React.Component {
 
           <Switch>
             <Route path="/front-pig">
-              <FrontPig />
+              <FrontPig setHeartGirth={this.setHeartGirth}/>
             </Route>
             <Route path="/side-pig">
-              <SidePig />
+              <SidePig setLength={this.setLength} setWeight={this.setWeight}/>
             </Route>
             <Route path="/results">
-              <Results />
+              <Results weight={this.state.weight}/>
             </Route>
             <Route path="/">
               <LandingPage />

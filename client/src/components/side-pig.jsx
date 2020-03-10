@@ -19,6 +19,7 @@ class SidePig extends React.Component {
       pigThirdPoint: { x: 0, y: 0 },
     }
     this.fileUploaded = this.fileUploaded.bind(this);
+    this.dropFileUploaded = this.dropFileUploaded.bind(this);
     this.setPoint = this.setPoint.bind(this);
     this.handleRefOrPig = this.handleRefOrPig.bind(this);
     this.handleMeasurementChange = this.handleMeasurementChange.bind(this);
@@ -26,11 +27,11 @@ class SidePig extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
+  // Upload File
   fileUploaded(file) {
     this.setState({
       selectedFile: URL.createObjectURL(file.target.files[0]),
     });
-    // console.log(event.target.files[0])
   }
 
   // Drop Upload File
