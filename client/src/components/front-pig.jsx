@@ -42,7 +42,7 @@ class FrontPig extends React.Component {
     this.setState({
       selectedFile: URL.createObjectURL(file[0])
     });
-  } 
+  }
 
   // Change RefSetPoint
   changeRefSetPoint(e) {
@@ -135,7 +135,7 @@ class FrontPig extends React.Component {
           <input type='file' onChange={this.fileUploaded} />
           <div className='picture-wrapper'>
             {this.state.selectedFile === '' ?
-              <PigDropZone dropFileUploaded={this.dropFileUploaded} name={'Pig Front'}/> :
+              <PigDropZone dropFileUploaded={this.dropFileUploaded} name={'Pig Front'} /> :
               <img ref="image" id='pig-picture-container' src={this.state.selectedFile} onClick={this.setPoint} />
             }
           </div>
@@ -145,17 +145,20 @@ class FrontPig extends React.Component {
           <button className='btn btn--stripe' name='pig' onClick={this.handleRefOrPig}>Pig Heart Girth</button>
         </div>
 
-        {this.state.refOrPig === 'reference' ?
-            <ReferenceMeasurement handleMeasurementChange={this.handleMeasurementChange} changeRefSetPoint={this.changeRefSetPoint}/>
-          :
-          <div>
-            <h4>Pig Heart Girth</h4>
-            <button className='btn btn--stripe' onClick={() => this.setState({ pigSetPoints: 'center' })}>Set Center Point</button>
-            <button className='btn btn--stripe' onClick={() => this.setState({ pigSetPoints: 'outer' })}>Set Outer Point</button>
-          </div>
-        }
-
-        <button className='btn--stripe' display='none' onClick={this.handleSubmit}>Submit</button>
+        <div className='measurement-container'>
+          {this.state.refOrPig === 'reference' ?
+            <ReferenceMeasurement handleMeasurementChange={this.handleMeasurementChange} changeRefSetPoint={this.changeRefSetPoint} />
+            :
+            <div className='measurement-wrapper'>
+              <h4>Pig Heart Girth</h4>
+              <div className='set-btn-container'>
+                <button className='btn btn--stripe' onClick={() => this.setState({ pigSetPoints: 'center' })}>Set Center Point</button>
+                <button className='btn btn--stripe' onClick={() => this.setState({ pigSetPoints: 'outer' })}>Set Outer Point</button>
+              </div>
+            </div>
+          }
+        </div>
+        <button className='btn btn--stripe btn-submit' onClick={this.handleSubmit}>Submit</button>
       </div>
     );
   }
