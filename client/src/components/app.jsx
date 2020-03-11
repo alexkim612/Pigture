@@ -91,7 +91,7 @@ class App extends React.Component {
             <Route path="/results">
               <Results weight={this.state.weight}/>
             </Route>
-            <Route path="/">
+            <Route exact path="/">
               <LandingPage />
             </Route>
           </Switch>

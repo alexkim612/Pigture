@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import PigDropZone from './pig-drop-zone.jsx';
+import ReferenceMeasurement from './reference-measurement.jsx';
 
 class FrontPig extends React.Component {
   constructor(props) {
@@ -21,6 +21,8 @@ class FrontPig extends React.Component {
 
     this.fileUploaded = this.fileUploaded.bind(this);
     this.dropFileUploaded = this.dropFileUploaded.bind(this);
+    this.changeRefSetPoint = this.changeRefSetPoint.bind(this);
+    this.changePigSetPoint = this.changePigSetPoint.bind(this);
     this.setPoint = this.setPoint.bind(this);
     this.handleMeasurementChange = this.handleMeasurementChange.bind(this);
     this.getPixelLength = this.getPixelLength.bind(this);
@@ -40,6 +42,21 @@ class FrontPig extends React.Component {
     this.setState({
       selectedFile: URL.createObjectURL(file[0])
     });
+  } 
+
+  // Change RefSetPoint
+  changeRefSetPoint(e) {
+    this.setState({
+      refSetPoints: e.target.name,
+    });
+  }
+
+  // Change PigSetPoint
+  changePigSetPoint(e) {
+    console.log(e.name);
+    // this.setState({
+
+    // });
   }
 
   // Set Points
@@ -129,15 +146,7 @@ class FrontPig extends React.Component {
         </div>
 
         {this.state.refOrPig === 'reference' ?
-          <div>
-            <h4>Reference Measurement</h4>
-            <div className='input-container'>
-              <label htmlFor='base-measurement'>Base Reference (inches)</label>
-              <input type='number' onChange={this.handleMeasurementChange} className='base-measurement' />
-            </div>
-            <button className='btn btn--stripe' onClick={() => this.setState({ refSetPoints: 'first' })}>Set First Point</button>
-            <button className='btn btn--stripe' onClick={() => this.setState({ refSetPoints: 'second' })}>Set Second Point</button>
-          </div>
+            <ReferenceMeasurement handleMeasurementChange={this.handleMeasurementChange} changeRefSetPoint={this.changeRefSetPoint}/>
           :
           <div>
             <h4>Pig Heart Girth</h4>
