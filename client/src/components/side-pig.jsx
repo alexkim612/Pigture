@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import PigDropZone from './pig-drop-zone.jsx';
+import ReferenceMeasurement from './reference-measurement.jsx';
 
 class SidePig extends React.Component {
   constructor(props) {
@@ -20,6 +21,7 @@ class SidePig extends React.Component {
     }
     this.fileUploaded = this.fileUploaded.bind(this);
     this.dropFileUploaded = this.dropFileUploaded.bind(this);
+    this.changeRefSetPoint = this.changeRefSetPoint.bind(this);
     this.setPoint = this.setPoint.bind(this);
     this.handleRefOrPig = this.handleRefOrPig.bind(this);
     this.handleMeasurementChange = this.handleMeasurementChange.bind(this);
@@ -38,6 +40,13 @@ class SidePig extends React.Component {
   dropFileUploaded(file) {
     this.setState({
       selectedFile: URL.createObjectURL(file[0])
+    });
+  }
+
+  // Change RefSetPoint
+  changeRefSetPoint(e) {
+    this.setState({
+      refSetPoints: e.target.name,
     });
   }
 
@@ -124,7 +133,7 @@ class SidePig extends React.Component {
           <input type='file' onChange={this.fileUploaded} />
           <div className='picture-wrapper'>
             {this.state.selectedFile === '' ?
-              <PigDropZone dropFileUploaded={this.dropFileUploaded} /> :
+              <PigDropZone dropFileUploaded={this.dropFileUploaded} name={'Pig Side'}/> :
               <img ref="image" id='pig-picture-container' src={this.state.selectedFile} onClick={this.setPoint} />
             }
           </div>
@@ -135,15 +144,7 @@ class SidePig extends React.Component {
         </div>
 
         {this.state.refOrPig === 'reference' ?
-          <div>
-            <h4>Reference Measurement</h4>
-            <div className='input-container'>
-              <label htmlFor='base-measurement'>Base Reference (inches)</label>
-              <input type='number' onChange={this.handleMeasurementChange} className='base-measurement' />
-            </div>
-            <button className='btn btn--stripe' onClick={() => this.setState({ refSetPoints: 'first' })}>Set First Point</button>
-            <button className='btn btn--stripe' onClick={() => this.setState({ refSetPoints: 'second' })}>Set Second Point</button>
-          </div>
+          <ReferenceMeasurement handleMeasurementChange={this.handleMeasurementChange} changeRefSetPoint={this.changeRefSetPoint} />
           :
           <div>
             <h4>Pig Length</h4>

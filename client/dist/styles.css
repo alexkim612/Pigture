@@ -125,7 +125,9 @@ li:active {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  font-size: 16px;
+  font-size: 30px;
+  cursor: pointer;
+  outline: none;
 }
 
 /* BUTTONS */
@@ -147,6 +149,7 @@ button {
   color: #666;
   border: 2px solid #666;
   border-radius: 6px;
+  outline: none;
   margin-bottom: 16px;
   -webkit-transition: all .5s ease;
   transition: all .5s ease;

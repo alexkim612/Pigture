@@ -11,12 +11,12 @@ class FrontPig extends React.Component {
       selectedFile: '',
       refOrPig: 'reference',
       refSetPoints: null,
-      refFirstPoint: { x: 0, y: 0 },
-      refSecondPoint: { x: 0, y: 0 },
+      refFirstPoint: {},
+      refSecondPoint: {},
       measurement: 0,
       pigSetPoints: null,
-      pigCenterPoint: { x: 0, y: 0 },
-      pigOuterPoint: { x: 0, y: 0 },
+      pigCenterPoint: {},
+      pigOuterPoint: {},
     }
 
     this.fileUploaded = this.fileUploaded.bind(this);
@@ -135,7 +135,7 @@ class FrontPig extends React.Component {
           <input type='file' onChange={this.fileUploaded} />
           <div className='picture-wrapper'>
             {this.state.selectedFile === '' ?
-              <PigDropZone dropFileUploaded={this.dropFileUploaded} /> :
+              <PigDropZone dropFileUploaded={this.dropFileUploaded} name={'Pig Front'}/> :
               <img ref="image" id='pig-picture-container' src={this.state.selectedFile} onClick={this.setPoint} />
             }
           </div>
@@ -155,7 +155,7 @@ class FrontPig extends React.Component {
           </div>
         }
 
-        <button className='btn--stripe' onClick={this.handleSubmit}>Submit</button>
+        <button className='btn--stripe' display='none' onClick={this.handleSubmit}>Submit</button>
       </div>
     );
   }

@@ -4,13 +4,13 @@ import Dropzone from 'react-dropzone';
 
 function PigDropZone(props) {
   return (
-    <div className='dropzone'>
+    <div>
       <Dropzone onDrop={acceptedFiles => props.dropFileUploaded(acceptedFiles)}>
         {({ getRootProps, getInputProps }) => (
           <section>
             <div {...getRootProps()}>
               <input {...getInputProps()} />
-              <p>Drag 'n' drop some files here, or click to select files</p>
+        <div className='dropzone'>{props.name} Pigture Here</div>
             </div>
           </section>
         )}
