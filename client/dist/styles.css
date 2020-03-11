@@ -58,14 +58,9 @@ a {
   text-decoration: none;
 }
 
-/* a:hover{
-  font-size: 110%;
-} */
-
 li:hover,
 li:active {
   background: rgba(179, 179, 179, 0.605);
-  /* text-transform: uppercase; */
   animation: fadeIn 0.5s 1;
 }
 
@@ -118,7 +113,8 @@ li:active {
   padding: 15px;
   width: 700px;
   height: 240px;
-  border: black 1px solid;
+  border: #79554896 2px solid;
+  border-radius: 15px;
 }
 
 .measurement-wrapper {
