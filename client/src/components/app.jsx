@@ -18,7 +18,6 @@ class App extends React.Component {
       weight: 0,
     }
 
-    this.nextPage = this.nextPage.bind(this);
     this.setLength = this.setLength.bind(this);
     this.setWeight = this.setWeight.bind(this);
     this.setHeartGirth = this.setHeartGirth.bind(this);
@@ -47,20 +46,6 @@ class App extends React.Component {
       weight: weight,
     });
   }
-
-  // Next page 
-  nextPage() {
-    let nextPage;
-    if (nextPage > 3) {
-      nextPage = 0;
-    } else {
-      nextPage = this.state.page += 1;
-    }
-    this.setState({
-      page: nextPage,
-    });
-  }
-
 
   render() {
     return (

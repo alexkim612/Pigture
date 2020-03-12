@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import PigDropZone from './pig-drop-zone.jsx';
 import ReferenceMeasurement from './reference-measurement.jsx';
+// import { useHistory } from "react-router-dom";
 
 class FrontPig extends React.Component {
   constructor(props) {
@@ -124,8 +125,9 @@ class FrontPig extends React.Component {
     const pigGirthCircum = 2 * Math.PI * (pigGirthRadius / ref);
     // console.log('ref:', ref, 'pigR:', pigGirthRadius, 'pigC:', pigGirthCircum);
     this.props.setHeartGirth(pigGirthCircum);
-    this.props.nextPage();
+    // useHistory().push("/side-pig");
   }
+
 
   render() {
     return (

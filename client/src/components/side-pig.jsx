@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import PigDropZone from './pig-drop-zone.jsx';
 import ReferenceMeasurement from './reference-measurement.jsx';
+// import { useHistory } from "react-router-dom";
 
 class SidePig extends React.Component {
   constructor(props) {
@@ -122,7 +123,7 @@ class SidePig extends React.Component {
 
     this.props.setLength(pigLength);
     setTimeout(() => this.props.setWeight(), 200);
-    this.props.nextPage();
+    // useHistory().push("/results");
   }
 
   render() {

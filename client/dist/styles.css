@@ -261,6 +261,13 @@ button {
 .statistics {
   font-size: 25px;
   font-weight: bold;
+  margin: 10px;
+  color: #666;
+}
+
+.statistics:hover {
+  font-size: 30px;
+  color: black;
 }
 
 .weight-container {
