@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom';
 function LandingPage(props) {
   return(
     <div>
-      LANDING PAGE
+      Pigture
     </div>
   );
 }
