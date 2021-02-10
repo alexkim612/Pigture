@@ -8,7 +8,7 @@ Find the weight of your pig with two simple pictures!
     <li>
       <a href="#about-the-project">About The Project</a>
       <ul>
-        <li><a href="#how-it-works">How It Works</a><li>
+        <li><a href="#how-it-works">How It Works</a></li>
         <li><a href="#built-with">Built With</a></li>
       </ul>
     </li>
