@@ -8,6 +8,7 @@ Find the weight of your pig with two simple pictures!
     <li>
       <a href="#about-the-project">About The Project</a>
       <ul>
+        <li><a href="#how-it-works"><How It Works</a><li>
         <li><a href="#built-with">Built With</a></li>
       </ul>
     </li>
@@ -41,6 +42,10 @@ Pigtures needed:
 
 * Full frontal picture with measurement device next to pig
 * Full side picture with measurement device next to pig
+
+### How It Works
+
+![image](https://www.phinhall.net/wordpress/wp-content/uploads/2015/01/pig1.png)
 
 ### Built With
 
