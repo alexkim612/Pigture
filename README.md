@@ -1,2 +1,2 @@
 # Pigture
-Find the weight of your pig with a simple picture!
+Find the weight of your pig with two simple pictures!
