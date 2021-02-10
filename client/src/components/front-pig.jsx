@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import PigDropZone from './pig-drop-zone.jsx';
 import ReferenceMeasurement from './reference-measurement.jsx';
 // import { useHistory } from "react-router-dom";

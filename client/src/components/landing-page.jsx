@@ -1,9 +1,8 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 
 function LandingPage(props) {
   return(
-    <div>
+    <div className="landing-page">
       Pigture
     </div>
   );

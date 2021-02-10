@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 import LandingPage from './landing-page.jsx';
@@ -76,8 +75,8 @@ class App extends React.Component {
             <Route path="/results">
               <Results weight={this.state.weight}/>
             </Route>
-            <Route exact path="/">
-              <LandingPage />
+            <Route path="/">
+              <LandingPage/>
             </Route>
           </Switch>
         </div>
